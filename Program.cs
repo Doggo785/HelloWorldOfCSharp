@@ -1,6 +1,5 @@
-﻿string name = "Doggo";
-string Strangers
-
+﻿string name;
+name = "Doggo";
 
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Im a GOD!");
