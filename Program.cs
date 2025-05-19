@@ -48,3 +48,19 @@ double unDouble = 3.14159265358979323846;
 decimal unDecimal = 3.141592653589793238462643383279502884197169399375105820974944592307816406286M;
 bool unBool = true;
 char unChar = 'A';
+
+Console.WriteLine("Texte : " + unTexte);
+Console.WriteLine("Byte : " + unByte);
+Console.WriteLine("SByte : " + unSByte);
+Console.WriteLine("Short : " + unShort);
+Console.WriteLine("UShort : " + unUShort);
+Console.WriteLine("Int : " + unInt);
+Console.WriteLine("UInt : " + unUInt);
+Console.WriteLine("Long : " + unLong);
+Console.WriteLine("ULong : " + unULong);
+Console.WriteLine("Float : " + unFloat);
+Console.WriteLine("Double : " + unDouble);
+Console.WriteLine("Decimal : " + unDecimal);
+Console.WriteLine("Bool : " + unBool);
+Console.WriteLine("Char : " + unChar);
+
