@@ -22,7 +22,7 @@ Console.WriteLine("Noted : The bread is for " + client + "!");
 */
 
 // Exercice 3 - The Thing Namer 3000
-
+/*
 Console.WriteLine("What kind of thing are we talking about?");
 string Subject = Console.ReadLine(); // Subject name 
 Console.WriteLine("How would you describe it? Big? Azure? Tattered?");
@@ -30,3 +30,21 @@ string Adjective = Console.ReadLine(); // Adjective of subject
 string c = "of Doom"; // String
 string d = "3000"; // String
 Console.WriteLine("The " + Adjective + " " + Subject + " " + c + " " + d + "!");
+*/
+
+// Exercice 4 - The Variable Shop 
+
+string unTexte = "coucou";
+byte unByte = 255;
+sbyte unSByte = -128;
+short unShort = 32767;
+ushort unUShort = 65535;
+int unInt = 564654;
+uint unUInt = 4294967295;
+long unLong = 1234567890123456789;
+ulong unULong = 18446744073709551615;
+float unFloat = 3.14f;
+double unDouble = 3.14159265358979323846;
+decimal unDecimal = 3.141592653589793238462643383279502884197169399375105820974944592307816406286M;
+bool unBool = true;
+char unChar = 'A';
