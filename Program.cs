@@ -184,7 +184,7 @@ else
 */
 
 // Exercice 11 - Watchtower
-
+/*
 sbyte x;
 sbyte y;
 
@@ -202,3 +202,46 @@ else if (x == 0 && y > 0) Console.Write("The enemy is to the east!");
 else if (y == 0 && x < 0) Console.Write("The enemy is to the north!");
 else if (y == 0 && x > 0) Console.Write("The enemy is to the south!");
 else Console.Write("The enemy is at your position!");
+*/
+
+// Exercice 12 - Buying Inventory
+
+int itemNumber;
+
+Console.Write("The following items are available:\r\n" +
+    "1 – Rope\r\n" +
+    "2 – Torches\r\n" +
+    "3 – Climbing Equipment\r\n" +
+    "4 – Clean Water\r\n" +
+    "5 – Machete\r\n" +
+    "6 – Canoe\r\n" +
+    "7 – Food Supplies\r\n" +
+    "What number do you want to see the price of : ");
+itemNumber = Convert.ToInt32(Console.ReadLine());
+switch (itemNumber)
+{
+    case 1:
+        Console.WriteLine("The price of the Rope is 10 gold.");
+        break;
+    case 2:
+        Console.WriteLine("The price of the Torches is 15 gold.");
+        break;
+    case 3:
+        Console.WriteLine("The price of the Climbing Equipment is 25 gold.");
+        break;
+    case 4:
+        Console.WriteLine("The price of the Clean Water is 1 gold.");
+        break;
+    case 5:
+        Console.WriteLine("The price of the Machete is 20 gold.");
+        break;
+    case 6:
+        Console.WriteLine("The price of the Canoe is 200 gold.");
+        break;
+    case 7:
+        Console.WriteLine("The price of the Food Supplies is 1 gold.");
+        break;
+    default:
+        Console.WriteLine("This item does not exist!");
+        break;
+}
