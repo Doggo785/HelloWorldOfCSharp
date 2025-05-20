@@ -102,7 +102,7 @@ Console.WriteLine("Char : " + unChar);
 */
 
 // Exercice 6 - The Triangle Farmer
-
+/*
 Console.WriteLine("How much is this Triangle Worth 3000");
 Console.WriteLine("What is the base of the triangle?");
 float baseTriangle;
@@ -119,5 +119,12 @@ if (!float.TryParse(Console.ReadLine(), out heightTriangle))
     return;
 }
 Console.WriteLine("The area of the triangle is " + (baseTriangle * heightTriangle) / 2 + ".");
+*/
 
+// Exercice 7 - The Four Sisters and the Duckbear
+
+int numberOfEggs;
+Console.WriteLine("How many eggs do you have today ?");
+numberOfEggs = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Each sister will get " + numberOfEggs/4 + " egg(s) and the Duckbear will eat " + numberOfEggs%4 + " egg(s)");
 
