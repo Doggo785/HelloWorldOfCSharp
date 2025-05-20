@@ -67,7 +67,7 @@ Console.WriteLine("Char : " + unChar);
 
 // Exercice 5 - The Variable Shop Returns
 
-// /*
+/*
 string unTexte = "coucou";
 unTexte = "Hello World!";
 byte unByte = 255;
@@ -99,5 +99,25 @@ Console.WriteLine("Double : " + unDouble);
 Console.WriteLine("Decimal : " + unDecimal);
 Console.WriteLine("Bool : " + unBool);
 Console.WriteLine("Char : " + unChar);
-// */
+*/
+
+// Exercice 6 - The Triangle Farmer
+
+Console.WriteLine("How much is this Triangle Worth 3000");
+Console.WriteLine("What is the base of the triangle?");
+float baseTriangle;
+if (!float.TryParse(Console.ReadLine(), out baseTriangle))
+{
+    Console.WriteLine("Invalid input. Please enter a number. You may try to put a ',' instead of a '.'");
+    return;
+}
+Console.WriteLine("What is the height of the triangle?");
+float heightTriangle;
+if (!float.TryParse(Console.ReadLine(), out heightTriangle))
+{
+    Console.WriteLine("Invalid input. Please enter a number. You may try to put a ',' instead of a '.'");
+    return;
+}
+Console.WriteLine("The area of the triangle is " + (baseTriangle * heightTriangle) / 2 + ".");
+
 
