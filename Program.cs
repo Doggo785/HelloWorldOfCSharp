@@ -173,7 +173,7 @@ Console.ResetColor(); // Reset la couleur de la console
 */
 
 // Exercice 10 - Repairing the Clocktower
-
+/*
 int number;
 Console.Write("What is the number of the clock ? ");
 number = Convert.ToInt32(Console.ReadLine());
@@ -181,3 +181,24 @@ if (number%2 == 0) // If the number is even
     Console.WriteLine("Tick");
 else
     Console.WriteLine("Tock");
+*/
+
+// Exercice 11 - Watchtower
+
+sbyte x;
+sbyte y;
+
+Console.Write("What is the x value ? ");
+x = Convert.ToSByte(Console.ReadLine());
+Console.Write("What is the y value ? ");
+y = Convert.ToSByte(Console.ReadLine());
+
+if (x < 0 && y < 0) Console.Write("The enemy is to the northwest!");
+else if (x < 0 && y > 0) Console.Write("The enemy is to the southwest!");
+else if (x > 0 && y < 0) Console.Write("The enemy is to the northeast!");
+else if (x > 0 && y > 0) Console.Write("The enemy is to the southeast!");
+else if (x == 0 && y < 0) Console.Write("The enemy is to the west!");
+else if (x == 0 && y > 0) Console.Write("The enemy is to the east!");
+else if (y == 0 && x < 0) Console.Write("The enemy is to the north!");
+else if (y == 0 && x > 0) Console.Write("The enemy is to the south!");
+else Console.Write("The enemy is at your position!");
