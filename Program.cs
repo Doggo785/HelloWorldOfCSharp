@@ -131,11 +131,17 @@ Console.WriteLine("Each sister will get " + numberOfEggs/4 + " egg(s) and the Du
 
 // Exercice 8 - The Dominion of Kings
 
+
 int estate;
 int duchy;
 int province;
 
-Console.WriteLine("Who as the best kingdom 3000");
+Console.ForegroundColor = ConsoleColor.DarkBlue;
+Console.Title= "Who as the best kingdom 3000";
+Console.Write("Press any key to start...");
+Console.ReadKey(true);
+//Console.Beep();
+Console.Clear();
 Console.WriteLine("How many estate do you have ?");
 estate = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("How many duchy do you have ?");
@@ -145,4 +151,7 @@ province = Convert.ToInt32(Console.ReadLine());
 estate *= 1;
 duchy *= 3;
 province *= 6;
-Console.WriteLine("Your kindom is worth " +  (estate + duchy + province) + " points !");   
+Console.WriteLine($"Your kindom is worth {(estate + duchy + province)} points !");
+
+
+// Exercice 9 - 
