@@ -131,7 +131,7 @@ Console.WriteLine("Each sister will get " + numberOfEggs/4 + " egg(s) and the Du
 
 // Exercice 8 - The Dominion of Kings
 
-
+/*
 int estate;
 int duchy;
 int province;
@@ -152,6 +152,21 @@ estate *= 1;
 duchy *= 3;
 province *= 6;
 Console.WriteLine($"Your kindom is worth {(estate + duchy + province)} points !");
+*/
 
+// Exercice 9 - The Defense of Consolas
 
-// Exercice 9 - 
+Console.Title = "Defense of Consolas";
+
+Byte targetedRow;
+Byte targetedColumn;
+
+Console.Write("Target Row ? ");
+targetedRow = Convert.ToByte(Console.ReadLine());
+Console.Write("Target Column ? ");
+targetedColumn = Convert.ToByte(Console.ReadLine());
+Console.Write("Crew needed on : \n");
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.Write($"({targetedRow - 1},{targetedColumn})\n({targetedRow},{targetedColumn - 1})\n({targetedRow + 1},{targetedColumn})\n({targetedRow},{targetedColumn + 1})\n"); // Make a cross around the targeted cell
+Console.Beep(); // Beep Bop sound
+Console.ResetColor();
