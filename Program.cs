@@ -122,9 +122,27 @@ Console.WriteLine("The area of the triangle is " + (baseTriangle * heightTriangl
 */
 
 // Exercice 7 - The Four Sisters and the Duckbear
-
+/*
 int numberOfEggs;
 Console.WriteLine("How many eggs do you have today ?");
 numberOfEggs = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Each sister will get " + numberOfEggs/4 + " egg(s) and the Duckbear will eat " + numberOfEggs%4 + " egg(s)");
+*/
 
+// Exercice 8 - The Dominion of Kings
+
+int estate;
+int duchy;
+int province;
+
+Console.WriteLine("Who as the best kingdom 3000");
+Console.WriteLine("How many estate do you have ?");
+estate = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("How many duchy do you have ?");
+duchy = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("How many province do you have ?");
+province = Convert.ToInt32(Console.ReadLine());
+estate *= 1;
+duchy *= 3;
+province *= 6;
+Console.WriteLine("Your kindom is worth " +  (estate + duchy + province) + " points !");   
