@@ -205,7 +205,7 @@ else Console.Write("The enemy is at your position!");
 */
 
 // Exercice 12 - Buying Inventory
-
+/*
 int itemNumber;
 
 Console.Write("The following items are available:\r\n" +
@@ -245,3 +245,53 @@ switch (itemNumber)
         Console.WriteLine("This item does not exist!");
         break;
 }
+*/
+
+// Exercice 13 - Discounted Inventory
+
+int itemNumber;
+string name;
+int price=0;
+
+Console.Write("The following items are available:\r\n" +
+    "1 – Rope\r\n" +
+    "2 – Torches\r\n" +
+    "3 – Climbing Equipment\r\n" +
+    "4 – Clean Water\r\n" +
+    "5 – Machete\r\n" +
+    "6 – Canoe\r\n" +
+    "7 – Food Supplies\r\n" +
+    "What number do you want to see the price of : ");
+itemNumber = Convert.ToInt32(Console.ReadLine());
+Console.Write("What is your name ? ");
+name = Convert.ToString(Console.ReadLine());
+switch (itemNumber)
+{
+    case 1:
+        price = 10;
+        break;
+    case 2:
+        price = 15;
+        break;
+    case 3:
+        price = 1;
+        break;
+    case 4:
+        price = 1;
+        break;
+    case 5:
+        price = 20;
+        break;
+    case 6:
+        price = 200;
+        break;
+    case 7:
+        price = 1;
+        break;
+    default:
+        Console.WriteLine("This item does not exist!");
+        break;
+}
+if (price>0)
+    Console.WriteLine($"The price of the Climbing Equipment is {(name == "Doggo" ? (float)price/2 : price )} gold.");
+
