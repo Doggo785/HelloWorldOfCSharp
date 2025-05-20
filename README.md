@@ -1,25 +1,25 @@
-# HelloWorldofC#
+# HelloWorldOfCSharp
 
-Ce dépôt contient toutes mes solutions aux exercices du livre **The C# Player's Guide (5th Edition)**.
+Ce dÃ©pÃ´t contient toutes mes solutions aux exercices du livre **The C# Player's Guide (5th Edition)**.
 
 ## Objectif
 
-L'objectif de ce projet est de me permettre de progresser et de monter en expérience sur le langage **C#** à travers la pratique régulière des exercices proposés dans le livre.
+L'objectif de ce projet est de me permettre de progresser et de monter en expÃ©rience sur le langage **C#** Ã  travers la pratique rÃ©guliÃ¨re des exercices proposÃ©s dans le livre.
 
 ## Structure
 
-- Toutes les solutions sont regroupées dans le fichier `Program.cs`.
-- Chaque exercice est clairement identifié et commenté pour faciliter la lecture et la compréhension.
+- Toutes les solutions sont regroupÃ©es dans le fichier `Program.cs`.
+- Chaque exercice est clairement identifiÃ© et commentÃ© pour faciliter la lecture et la comprÃ©hension.
 
-## Prérequis
+## PrÃ©requis
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Un éditeur compatible, comme Visual Studio 2022.
+- Un Ã©diteur compatible, comme Visual Studio 2022.
 
 ## Remarques
 
-Ce dépôt est avant tout un espace d'apprentissage et d'expérimentation. Les solutions peuvent évoluer au fil de ma progression et de ma compréhension du langage.
+Ce dÃ©pÃ´t est avant tout un espace d'apprentissage et d'expÃ©rimentation. Les solutions peuvent Ã©voluer au fil de ma progression et de ma comprÃ©hension du langage.
 
 ---
 
-*Inspiré par The C# Player's Guide (5th Edition) de RB Whitaker.*
+*InspirÃ© par The C# Player's Guide (5th Edition) de RB Whitaker.*
