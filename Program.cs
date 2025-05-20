@@ -155,7 +155,7 @@ Console.WriteLine($"Your kindom is worth {(estate + duchy + province)} points !"
 */
 
 // Exercice 9 - The Defense of Consolas
-
+/*
 Console.Title = "Defense of Consolas";
 
 Byte targetedRow;
@@ -169,4 +169,15 @@ Console.Write("Crew needed on : \n");
 Console.ForegroundColor = ConsoleColor.DarkGreen;
 Console.Write($"({targetedRow - 1},{targetedColumn})\n({targetedRow},{targetedColumn - 1})\n({targetedRow + 1},{targetedColumn})\n({targetedRow},{targetedColumn + 1})\n"); // Make a cross around the targeted cell
 Console.Beep(); // Beep Bop sound
-Console.ResetColor();
+Console.ResetColor(); // Reset la couleur de la console
+*/
+
+// Exercice 10 - Repairing the Clocktower
+
+int number;
+Console.Write("What is the number of the clock ? ");
+number = Convert.ToInt32(Console.ReadLine());
+if (number%2 == 0) // If the number is even
+    Console.WriteLine("Tick");
+else
+    Console.WriteLine("Tock");
