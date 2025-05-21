@@ -299,6 +299,7 @@ if (price>0)
 
 // Exercice 14 - The Prototype
 
+/*
 using System.Security.Cryptography;
 
 int guessNumber = RandomNumberGenerator.GetInt32(101); // Generate a random int between 0 and 100
@@ -322,3 +323,32 @@ do
 
 }
 while (userNumber!=guessNumber);
+*/
+
+// Exercice 15 - The Magic Cannon
+
+for (int turnOfCrank = 1; turnOfCrank < 101; turnOfCrank++)
+{
+    if (turnOfCrank % 3 == 0 && turnOfCrank % 5 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine($"{turnOfCrank, -3}: COMBINED ULTRA BLAST");
+    }
+    else if (turnOfCrank % 3 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"{turnOfCrank, -3}: Fire");
+    }
+    else if (turnOfCrank % 5 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine($"{turnOfCrank,-3}: Electric");
+    }
+
+    else
+    {
+        Console.ResetColor();
+        Console.WriteLine($"{turnOfCrank,-3}: Normal");
+    }
+}
+Console.ResetColor();
