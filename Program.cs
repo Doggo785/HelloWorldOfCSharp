@@ -249,6 +249,7 @@ switch (itemNumber)
 
 // Exercice 13 - Discounted Inventory
 
+/*
 int itemNumber;
 string name;
 int price=0;
@@ -294,4 +295,30 @@ switch (itemNumber)
 }
 if (price>0)
     Console.WriteLine($"The price of the Climbing Equipment is {(name == "Doggo" ? (float)price/2 : price )} gold.");
+*/
 
+// Exercice 14 - The Prototype
+
+using System.Security.Cryptography;
+
+int guessNumber = RandomNumberGenerator.GetInt32(101); // Generate a random int between 0 and 100
+int userNumber;
+
+
+Console.WriteLine("Welcome to the guess the number 3000 Game !");
+
+do
+{
+    Console.WriteLine("What is your guess (0-100): ");
+    userNumber = Convert.ToInt32(Console.ReadLine());
+    if (userNumber > 100 || userNumber < 0)
+        Console.WriteLine($"{userNumber} is not between 0 and 100, retry.");
+    else if (userNumber > guessNumber)
+        Console.WriteLine($"{userNumber} is to high !");
+    else if (userNumber < guessNumber)
+        Console.WriteLine($"{userNumber} is to low !");
+    else if (userNumber == guessNumber)
+        Console.WriteLine($"{userNumber} is the correct answer !");
+
+}
+while (userNumber!=guessNumber);
