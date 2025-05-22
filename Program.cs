@@ -357,7 +357,7 @@ Console.ResetColor();
 
 // Exercice 16 - The Replicator of D’To
 
-
+/*
 int[] array = new int[5];
 int[] arrayDupe = new int[5];
 
@@ -383,3 +383,15 @@ for (int i = 0; i < arrayDupe.Length; i++)
 {
     Console.WriteLine($"arrayDupe[{i}] = {arrayDupe[i]}");
 }
+*/
+
+// Exercice 17 - The Laws of Freach
+
+int[] array = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+int currentSmallest = int.MaxValue; 
+foreach (int number in array)
+{
+    if (number < currentSmallest)
+        currentSmallest = number;
+}
+Console.WriteLine(currentSmallest);
