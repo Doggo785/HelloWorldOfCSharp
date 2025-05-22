@@ -327,6 +327,7 @@ while (userNumber!=guessNumber);
 
 // Exercice 15 - The Magic Cannon
 
+/*
 for (int turnOfCrank = 1; turnOfCrank < 101; turnOfCrank++)
 {
     if (turnOfCrank % 3 == 0 && turnOfCrank % 5 == 0)
@@ -352,3 +353,33 @@ for (int turnOfCrank = 1; turnOfCrank < 101; turnOfCrank++)
     }
 }
 Console.ResetColor();
+*/
+
+// Exercice 16 - The Replicator of D’To
+
+
+int[] array = new int[5];
+int[] arrayDupe = new int[5];
+
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write($"{"[" + (i+1) + "/5]",-8} Enter a number to fill the array : ");
+    array[i]=Convert.ToInt32(Console.ReadLine());
+}
+
+
+for (int i = 0; i < array.Length; i++)
+{
+    arrayDupe[i] = array[i];
+    Console.WriteLine($"arrayDupe[{i}] = {arrayDupe[i]}");
+}
+Console.WriteLine("The original array is : ");
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine($"array[{i}] = {array[i]}");
+}
+Console.WriteLine("The duplicated array is : ");
+for (int i = 0; i < arrayDupe.Length; i++)
+{
+    Console.WriteLine($"arrayDupe[{i}] = {arrayDupe[i]}");
+}
