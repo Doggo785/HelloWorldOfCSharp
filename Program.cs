@@ -413,7 +413,7 @@ Console.WriteLine($"Bigger matrix : {biggerMatrix[1, 2, 3]}");
 */
 
 // Testing functions
-
+/*
 void Countdown(int number)
 {
     for (int i = number; i >= 0; i--)
@@ -422,3 +422,18 @@ void Countdown(int number)
     }
 };
 Countdown(10);
+
+*/
+
+// Exercice 18 - Taking a Number
+
+int AskForNumber(string text)
+{
+    int number;
+    Console.Write(text);
+    number = Convert.ToInt32(Console.ReadLine());
+    return number;
+}
+
+AskForNumber("Please enter a number : ");
+
