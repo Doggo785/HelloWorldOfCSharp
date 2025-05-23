@@ -299,7 +299,7 @@ if (price>0)
 
 // Exercice 14 - The Prototype
 
-
+/*
 using System.Security.Cryptography;
 
 int guessNumber = RandomNumberGenerator.GetInt32(101); // Generate a random int between 0 and 100
@@ -324,7 +324,7 @@ do
 
 }
 while (userNumber!=guessNumber);
-
+*/
 
 // Exercice 15 - The Magic Cannon
 
@@ -449,4 +449,18 @@ int AskForNumberInRange(string text, int min, int max)
     return number;
 }
 
+// Exercice 19 - Countdown
+
+void Countdown(int number)
+{
+    if (number == 0)
+        Console.WriteLine("0");
+    else
+    {
+        Console.WriteLine(number);
+        Countdown(number - 1);
+    }
+};
+
+Countdown(10);
 
