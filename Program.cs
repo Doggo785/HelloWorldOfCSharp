@@ -299,7 +299,7 @@ if (price>0)
 
 // Exercice 14 - The Prototype
 
-/*
+
 using System.Security.Cryptography;
 
 int guessNumber = RandomNumberGenerator.GetInt32(101); // Generate a random int between 0 and 100
@@ -310,8 +310,9 @@ Console.WriteLine("Welcome to the guess the number 3000 Game !");
 
 do
 {
-    Console.WriteLine("What is your guess (0-100): ");
-    userNumber = Convert.ToInt32(Console.ReadLine());
+    //Console.WriteLine("What is your guess (0-100): ");
+    //userNumber = Convert.ToInt32(Console.ReadLine());
+    userNumber = AskForNumberInRange("What is your guess (0-100): ", 0, 100);
     if (userNumber > 100 || userNumber < 0)
         Console.WriteLine($"{userNumber} is not between 0 and 100, retry.");
     else if (userNumber > guessNumber)
@@ -323,7 +324,7 @@ do
 
 }
 while (userNumber!=guessNumber);
-*/
+
 
 // Exercice 15 - The Magic Cannon
 
@@ -435,8 +436,6 @@ int AskForNumber(string text)
     return number;
 }
 
-AskForNumber("Please enter a number : ");
-
 int AskForNumberInRange(string text, int min, int max)
 {
     int number;
@@ -450,4 +449,4 @@ int AskForNumberInRange(string text, int min, int max)
     return number;
 }
 
-AskForNumberInRange("Please enter a number between 1 and 10 : ", 1, 10);
+
