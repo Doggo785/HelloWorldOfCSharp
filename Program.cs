@@ -437,3 +437,17 @@ int AskForNumber(string text)
 
 AskForNumber("Please enter a number : ");
 
+int AskForNumberInRange(string text, int min, int max)
+{
+    int number;
+    do
+    {
+        Console.WriteLine(text);
+        number = Convert.ToInt32(Console.ReadLine());
+        if (number < min || number > max)
+            Console.WriteLine($"Please enter a number between {min} and {max}.");
+    } while (number < min || number > max);
+    return number;
+}
+
+AskForNumberInRange("Please enter a number between 1 and 10 : ", 1, 10);
