@@ -387,6 +387,7 @@ for (int i = 0; i < arrayDupe.Length; i++)
 
 // Exercice 17 - The Laws of Freach
 
+/*
 int[] array = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
 int currentSmallest = int.MaxValue; 
 foreach (int number in array)
@@ -395,3 +396,17 @@ foreach (int number in array)
         currentSmallest = number;
 }
 Console.WriteLine(currentSmallest);
+*/
+
+// Testing matrix
+
+int[,] matrix = new int[3, 4] { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} }; // 3 rows, 4 columns
+
+Console.WriteLine($"Matrix : {matrix[1, 2]}");
+
+int[,,] biggerMatrix = new int[2,3, 4] { 
+    { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } },
+    { { 13, 14, 15, 16 }, { 17, 18, 19, 20 }, { 21, 22, 23, 24 } } 
+}; 
+
+Console.WriteLine($"Bigger matrix : {biggerMatrix[1, 2, 3]}"); 
