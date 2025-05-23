@@ -399,7 +399,7 @@ Console.WriteLine(currentSmallest);
 */
 
 // Testing matrix
-
+/*
 int[,] matrix = new int[3, 4] { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} }; // 3 rows, 4 columns
 
 Console.WriteLine($"Matrix : {matrix[1, 2]}");
@@ -410,3 +410,15 @@ int[,,] biggerMatrix = new int[2,3, 4] {
 }; 
 
 Console.WriteLine($"Bigger matrix : {biggerMatrix[1, 2, 3]}"); 
+*/
+
+// Testing functions
+
+void Countdown(int number)
+{
+    for (int i = number; i >= 0; i--)
+    {
+        Console.WriteLine(i);
+    }
+};
+Countdown(10);
