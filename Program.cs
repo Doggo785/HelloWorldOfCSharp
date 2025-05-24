@@ -451,6 +451,7 @@ int AskForNumberInRange(string text, int min, int max)
 
 // Exercice 19 - Countdown
 
+/*
 void Countdown(int number)
 {
     if (number == 0)
@@ -463,4 +464,28 @@ void Countdown(int number)
 };
 
 Countdown(10);
+*/
 
+// Memory test
+
+string heapStr = "Heap String"; // This is stored in the heap
+string heapStrDupe = heapStr; // This is a reference to the same string in the heap
+
+Console.WriteLine($"Heap String equals : {heapStr==heapStrDupe}");
+Console.WriteLine($"Heap String is the same object as Heap String Dupe : {ReferenceEquals(heapStr, heapStrDupe)}");
+
+string heapStr2 = "Heap String"; 
+string heapStrDupe2 = "Heap String"; 
+
+Console.WriteLine($"Heap String equals : {heapStr2 == heapStrDupe2}");
+Console.WriteLine($"Heap String is the same object as Heap String Dupe : {ReferenceEquals(heapStr2, heapStrDupe2)}");
+
+int[] array = new int[] { 1, 2, 3 }; // This is stored in the heap
+int[] arrayDupe = array; // This is a reference to the same array in the heap
+
+Console.WriteLine("Array equals : " + (array == arrayDupe));
+Console.WriteLine("Array is the same object as Array Dupe : " + ReferenceEquals(array, arrayDupe));
+
+array[array.Length - 1] = 4; // Change the last element of the array
+Console.WriteLine("Array after change : " + string.Join(", ", array));
+Console.WriteLine("Array Dupe after change : " + string.Join(", ", arrayDupe)); // Both arrays are the same object, so they are both changed
