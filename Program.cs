@@ -468,6 +468,7 @@ Countdown(10);
 
 // Memory test
 
+/*
 string heapStr = "Heap String"; // This is stored in the heap
 string heapStrDupe = heapStr; // This is a reference to the same string in the heap
 
@@ -489,3 +490,117 @@ Console.WriteLine("Array is the same object as Array Dupe : " + ReferenceEquals(
 array[array.Length - 1] = 4; // Change the last element of the array
 Console.WriteLine("Array after change : " + string.Join(", ", array));
 Console.WriteLine("Array Dupe after change : " + string.Join(", ", arrayDupe)); // Both arrays are the same object, so they are both changed
+
+*/
+
+// Final test - First Part - Hunting the Manticore
+ChooseManticoreDistance();
+
+void ChooseManticoreDistance()
+{
+    Console.WriteLine("Player 1, enter the distance between the Manticore and the city : ");
+    byte distanceFromManticore = Convert.ToByte(Console.ReadLine());
+    if (distanceFromManticore > 100 || distanceFromManticore < 0)
+    {
+        Console.WriteLine("Please enter a number between 0 and 100 !");
+        ChooseManticoreDistance();
+    }
+    else
+    {
+        HuntingTheMantricore(distanceFromManticore);
+    }
+}
+
+
+sbyte CannonRolls(byte round)
+{
+    if (round % 3 == 0 && round % 5 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine("COMBINED ULTRA BLAST ACTIVATED !! You will deal 10 damage !");
+        return Convert.ToSByte(10);
+    }
+    else if (round % 3 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Fire cannon activated ! You will deal 3 damage !");
+        return Convert.ToSByte(3);
+    }
+    else if (round % 5 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Electric cannon activated ! You will deal 3 damage !");
+        return Convert.ToSByte(3);
+    }
+
+    else
+    {
+        Console.ResetColor();
+        Console.WriteLine("Normal cannon shot. You will deal 1 damage");
+        return Convert.ToSByte(1);
+    }
+}
+
+bool HitOrMiss(byte distanceFromManticore)
+{
+    Console.Write("Enter the position of the Manticore : ");
+    byte Guess = Convert.ToByte(Console.ReadLine());
+    if (Guess < 0 || Guess > 100)
+    {
+        Console.WriteLine("Wrong position ! It should be between 0 and 100, try again !");
+        return HitOrMiss(distanceFromManticore);
+    }
+    else if (distanceFromManticore == Guess)
+    {
+        return true;
+    }
+    else if (distanceFromManticore > Guess)
+    {
+        Console.WriteLine("The position entered was too high");
+        return false;
+    }
+    else if (distanceFromManticore < Guess)
+    {
+        Console.WriteLine("The postion entered was too low");
+        return false;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+void HuntingTheMantricore(byte distanceFromManticore)
+{
+    sbyte cityHealth = 15;
+    sbyte manticoreHealth = 10;
+    sbyte damage;
+    Console.Clear();
+    Console.WriteLine("Player 2, it's your turn !");
+    for (byte round = 1; cityHealth >  0 && manticoreHealth > 0; round++)
+    {
+        Console.WriteLine("------------------------------------------------------");
+        Console.WriteLine(
+    $"{"STATUS :",-12}{"Round : " + round,-12}{"City : " + cityHealth + "/15",-16}{"Manticore : " + manticoreHealth + "/10",-20}"
+);
+        damage = CannonRolls(round);
+        Console.ResetColor();
+        //bool hitOrMiss = HitOrMiss(distanceFromManticore);
+        if (HitOrMiss(distanceFromManticore))
+        {
+            Console.WriteLine($"You hit the Manticore with {damage} damage !");
+            manticoreHealth -= damage;
+
+        }
+        cityHealth--;
+    }
+    if (cityHealth <= 0) { 
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\n\nThe city was entirely destroy.. You lost.\n");
+    }
+    else if (manticoreHealth <= 0) { 
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("\n\nYou just killed the Mantricore ! Thank you for saving the city of Consolas !\n");
+    }
+    Console.ResetColor();
+}
