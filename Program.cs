@@ -494,6 +494,8 @@ Console.WriteLine("Array Dupe after change : " + string.Join(", ", arrayDupe)); 
 */
 
 // Final test - First Part - Hunting the Manticore
+
+/*
 ChooseManticoreDistance();
 
 void ChooseManticoreDistance()
@@ -604,3 +606,96 @@ void HuntingTheMantricore(byte distanceFromManticore)
     }
     Console.ResetColor();
 }
+
+*/
+
+// PART 2 - Exercice 1 - Simula’s Test 
+
+Chest status = Chest.Locked;
+string choice;
+Chest Close(Chest status)
+{
+    if (status == Chest.Open) {
+        Console.WriteLine("Chest successfully closed !");
+        return Chest.Closed;
+    }
+    else
+    {
+        Console.WriteLine("The chest cant be closed..");
+        return status;
+    }
+
+}
+Chest Unlock(Chest status)
+{
+    if (status == Chest.Locked)
+    {
+        Console.WriteLine("Chest successfully unlocked !");
+        return Chest.Closed;
+    }
+    else
+    {
+        Console.WriteLine("The chest cant be unlocked..");
+        return status;
+    }
+
+}
+Chest Open(Chest status)
+{
+    if (status == Chest.Closed)
+    {
+        Console.WriteLine("Chest successfully opened !");
+        return Chest.Open;
+    }
+    else
+    {
+        Console.WriteLine("The chest cant be opened..");
+        return status;
+    }
+
+}
+Chest Lock(Chest status)
+{
+    if (status == Chest.Closed)
+    {
+        Console.WriteLine("Chest successfully locked !");
+        return Chest.Locked;
+    }
+    else
+    {
+        Console.WriteLine("The chest cant be locked..");
+        return status;
+    }
+
+}
+
+do
+{
+    if (status == Chest.Closed)
+        Console.Write("The chest is closed. What do you want to do? ");
+    else if (status == Chest.Locked)
+        Console.Write("The chest is locked. What do you want to do? ");
+    else if (status == Chest.Open)
+        Console.Write("The chest is opened. What do you want to do? ");
+    // Make a switch for Lock, Unlock, Open, Close with Console.ReadLine();
+    choice = Console.ReadLine();
+    switch (choice)
+    {
+        case "unlock":
+            status = Unlock(status);
+            break;
+        case "lock":
+            status = Lock(status);
+            break;
+        case "open":
+            status = Open(status);
+            break;
+        case "close":
+            status = Close(status);
+            break;
+
+    }
+}
+while (true);
+
+enum Chest { Locked, Open, Closed  }
