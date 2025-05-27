@@ -428,6 +428,8 @@ Countdown(10);
 
 // Exercice 18 - Taking a Number
 
+using System.Security;
+
 int AskForNumber(string text)
 {
     int number;
@@ -611,6 +613,7 @@ void HuntingTheMantricore(byte distanceFromManticore)
 
 // PART 2 - Exercice 1 - Simula’s Test 
 
+/*
 Chest status = Chest.Locked;
 string choice;
 Chest Close(Chest status)
@@ -699,3 +702,82 @@ do
 while (true);
 
 enum Chest { Locked, Open, Closed  }
+
+*/
+
+// PART 2 - Exercice 2 - Simula’s Soup
+
+SimulaCooking();
+void SimulaCooking()
+{
+    Console.WriteLine("Welcome to Simula's Soup Cooking Simulator 3000 !");
+    (type soupeType, ingredient ingredient, seasoning seasoning) yourSoup = AskForSoupIngredients();
+    Console.WriteLine($"You are making a {yourSoup.soupeType} with {yourSoup.ingredient} and {yourSoup.seasoning} seasoning.");
+}
+
+(type soupeType, ingredient ingredient, seasoning seasoning) AskForSoupIngredients()
+{
+    Console.WriteLine("What type of soup do you want to make? (soup, stew, gumbo)");
+    type soupTypeVar;
+    ingredient ingredientVar;
+    seasoning seasoningVar;
+
+    switch (Console.ReadLine())
+    {
+        case "soup":
+            soupTypeVar = type.soup;
+            break;
+        case "stew":
+             soupTypeVar = type.stew;
+            break;
+        case "gumbo":
+             soupTypeVar = type.gumbo;
+            break;
+        default:
+            Console.WriteLine("Invalid soup type, defaulting to soup.");
+            soupTypeVar = type.soup;
+            break;
+    }
+    Console.WriteLine("What ingredients do you want to add? (mushrooms, chicken, carrots, potatoes)");
+    switch (Console.ReadLine())
+    {
+        case "mushrooms":
+             ingredientVar = ingredient.mushrooms;
+            break;
+        case "chicken":
+            ingredientVar = ingredient.chicken;
+            break;
+        case "carrots":
+            ingredientVar = ingredient.carrots;
+            break;
+        case "potatoes":
+            ingredientVar = ingredient.potatoes;
+            break;
+        default:
+            Console.WriteLine("Invalid ingredient, defaulting to mushrooms.");
+            ingredientVar = ingredient.mushrooms;
+            break;
+    }
+    Console.WriteLine("What seasoning do you want to add? (spicy, salty, sweet)");
+    switch (Console.ReadLine())
+    {
+        case "spicy":
+            seasoningVar = seasoning.spicy;
+            break;
+        case "salty":
+            seasoningVar = seasoning.salty;
+            break;
+        case "sweet":
+            seasoningVar = seasoning.sweet;
+            break;
+        default:
+            Console.WriteLine("Invalid seasoning, defaulting to spicy.");
+            seasoningVar = seasoning.spicy;
+            break;
+    }
+    return (soupTypeVar, ingredientVar, seasoningVar);
+}
+
+enum type { soup, stew, gumbo }
+enum ingredient { mushrooms, chicken, carrots, potatoes }
+enum seasoning { spicy, salty, sweet }
