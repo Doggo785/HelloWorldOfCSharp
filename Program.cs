@@ -707,6 +707,7 @@ enum Chest { Locked, Open, Closed  }
 
 // PART 2 - Exercice 2 - Simula’s Soup
 
+/*
 SimulaCooking();
 void SimulaCooking()
 {
@@ -781,3 +782,120 @@ void SimulaCooking()
 enum type { soup, stew, gumbo }
 enum ingredient { mushrooms, chicken, carrots, potatoes }
 enum seasoning { spicy, salty, sweet }
+
+*/
+
+// PART 2 - Exercice 3 - Vin Fletcher’s Arrows
+
+ArrowCreator();
+void ArrowCreator() {
+    Console.WriteLine("Welcome to Vin Fletcher's Arrow Creator 3000!");
+    ArrowHead arrowHead = GetArrowHead();
+    Fletching fletching = GetFletching();
+    int length = GetArrowLength();
+    Arrow amazingArrown = new Arrow { head = arrowHead, fletching = fletching, length = length };
+    Console.WriteLine($"You created an arrow with a {amazingArrown.head} head, {amazingArrown.fletching} fletching and a length of {amazingArrown.length} cm.");
+    Console.WriteLine($"The cost of this arrow is {amazingArrown.GetCost()} gold.");
+
+}
+
+ArrowHead GetArrowHead()
+{
+    Console.WriteLine("What type of arrow head do you want? (steel, wood, obsidian)");
+    switch (Console.ReadLine())
+    {
+        case "steel":
+            return ArrowHead.steel;
+        case "wood":
+            return ArrowHead.wood;
+        case "obsidian":
+            return ArrowHead.obsidian;
+        default:
+            Console.WriteLine("Invalid arrow head type, defaulting to steel.");
+            return ArrowHead.steel;
+    }
+}
+
+Fletching GetFletching()
+{
+    Console.WriteLine("What type of fletching do you want? (plastic, turkeyFeather, gooseFeather)");
+    switch (Console.ReadLine())
+    {
+        case "plastic":
+            return Fletching.plastic;
+        case "turkeyFeather":
+            return Fletching.turkeyFeather;
+        case "gooseFeather":
+            return Fletching.gooseFeather;
+        default:
+            Console.WriteLine("Invalid fletching type, defaulting to plastic.");
+            return Fletching.plastic;
+    }
+}
+
+int GetArrowLength()
+{
+    Console.Write("What is the length of the arrow? ");
+    int length;
+    while (!int.TryParse(Console.ReadLine(), out length) || length < 60 || length > 100)
+    {
+        Console.WriteLine("Invalid length, please enter a positive number between 60 and 100.");
+    }
+    return length;
+}
+
+class Arrow {
+    public ArrowHead head = ArrowHead.wood;
+    public Fletching fletching = Fletching.plastic;
+    public int length = 60;
+
+    public Arrow(ArrowHead head, Fletching fletching, int length)
+    {
+        this.head = head;
+        this.fletching = fletching;
+        this.length = length;
+    }
+
+    public Arrow() { } // Default constructor
+
+    public double GetCost()
+    {
+        double cost = 0;
+        switch (head)
+        {
+            case ArrowHead.steel:
+                cost += 10;
+                break;
+            case ArrowHead.wood:
+                cost += 3;
+                break;
+            case ArrowHead.obsidian:
+                cost += 5;
+                break;
+            default:
+                cost = 0;
+                break;
+        }
+        switch (fletching)
+        {
+            case Fletching.plastic:
+                cost += 10;
+                break;
+            case Fletching.turkeyFeather:
+                cost += 5;
+                break;
+            case Fletching.gooseFeather:
+                cost += 3;
+                break;
+            default:
+                cost = 0;
+                break;
+        }
+        cost += length*0.05;
+        return cost;
+    }
+}
+
+enum ArrowHead { steel, wood, obsidian }
+enum Fletching { plastic, turkeyFeather, gooseFeather }
+
