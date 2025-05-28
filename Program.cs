@@ -858,9 +858,9 @@ class Arrow {
 
     public Arrow() { } // Default constructor
 
-    public double GetCost()
+    public float GetCost()
     {
-        double cost = 0;
+        float cost = 0;
         switch (head)
         {
             case ArrowHead.steel:
@@ -891,7 +891,7 @@ class Arrow {
                 cost = 0;
                 break;
         }
-        cost += length*0.05;
+        cost += length*0.05f;
         return cost;
     }
 }
