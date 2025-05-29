@@ -904,6 +904,7 @@ enum Fletching { plastic, turkeyFeather, gooseFeather }
 
 // PART 2 - Exercice 4 - Vin’s Trouble
 
+/*
 Arrow wonderfullArrow = ArrowMaker();
 Console.WriteLine($"You created an arrow with a {wonderfullArrow.GetHead()} head, {wonderfullArrow.GetFletching()} fletching and a length of {wonderfullArrow.GetLength()} cm.");
 Console.WriteLine($"The cost of this arrow is {wonderfullArrow.GetCost()} gold.");
@@ -990,6 +991,124 @@ class Arrow
     {
         return this.length;
     }
+
+    public float GetCost()
+    {
+        float cost = 0;
+        switch (head)
+        {
+            case ArrowHead.steel:
+                cost += 10;
+                break;
+            case ArrowHead.wood:
+                cost += 3;
+                break;
+            case ArrowHead.obsidian:
+                cost += 5;
+                break;
+            default:
+                cost = 0;
+                break;
+        }
+        switch (fletching)
+        {
+            case Fletching.plastic:
+                cost += 10;
+                break;
+            case Fletching.turkeyFeather:
+                cost += 5;
+                break;
+            case Fletching.gooseFeather:
+                cost += 3;
+                break;
+            default:
+                cost = 0;
+                break;
+        }
+        cost += length * 0.05f;
+        return cost;
+    }
+}
+
+enum ArrowHead { steel, wood, obsidian }
+enum Fletching { plastic, turkeyFeather, gooseFeather }
+*/
+
+// PART 2 - Exercice 5 - The Properties of Arrows
+
+Arrow wonderfullArrow = ArrowMaker();
+Console.WriteLine($"You created an arrow with a {wonderfullArrow.head} head, {wonderfullArrow.fletching} fletching and a length of {wonderfullArrow.length} cm.");
+Console.WriteLine($"The cost of this arrow is {wonderfullArrow.GetCost()} gold.");
+
+
+Arrow ArrowMaker()
+{
+    Console.WriteLine("Welcome to Vin Fletcher's Arrow Creator 3000!");
+    ArrowHead arrowHead = GetArrowHead();
+    Fletching fletching = GetFletching();
+    int length = GetArrowLength();
+    return new Arrow(arrowHead, fletching, length);
+}
+
+ArrowHead GetArrowHead()
+{
+    Console.WriteLine("What type of arrow head do you want? (steel, wood, obsidian)");
+    switch (Console.ReadLine())
+    {
+        case "steel":
+            return ArrowHead.steel;
+        case "wood":
+            return ArrowHead.wood;
+        case "obsidian":
+            return ArrowHead.obsidian;
+        default:
+            Console.WriteLine("Invalid arrow head type, defaulting to steel.");
+            return ArrowHead.steel;
+    }
+}
+
+Fletching GetFletching()
+{
+    Console.WriteLine("What type of fletching do you want? (plastic, turkeyFeather, gooseFeather)");
+    switch (Console.ReadLine())
+    {
+        case "plastic":
+            return Fletching.plastic;
+        case "turkeyFeather":
+            return Fletching.turkeyFeather;
+        case "gooseFeather":
+            return Fletching.gooseFeather;
+        default:
+            Console.WriteLine("Invalid fletching type, defaulting to plastic.");
+            return Fletching.plastic;
+    }
+}
+
+int GetArrowLength()
+{
+    Console.Write("What is the length of the arrow? ");
+    int length;
+    while (!int.TryParse(Console.ReadLine(), out length) || length < 60 || length > 100)
+    {
+        Console.WriteLine("Invalid length, please enter a positive number between 60 and 100.");
+    }
+    return length;
+}
+
+class Arrow
+{
+    public ArrowHead head { get; init; } = ArrowHead.wood;
+    public Fletching fletching { get; init; } = Fletching.plastic;
+    public int length { get; init; } = 60;
+
+    public Arrow(ArrowHead head, Fletching fletching, int length)
+    {
+        this.head = head;
+        this.fletching = fletching;
+        this.length = length;
+    }
+
+    public Arrow() { } // Default constructor
 
     public float GetCost()
     {
