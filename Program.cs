@@ -32,6 +32,7 @@ void PointExercice() {
     Point Point1 = new(2, 3);
     Point Point2 = new(-4, 0);
 
-    Console.WriteLine("Here is the Coords for the first point : " + Point1.ShowCoords());
+    Console.WriteLine($"Here is the Coords for the first point : ({Point1.X},{Point1.Y})");
+    Console.WriteLine($"Here is the Coords for the second point : ({Point2.X},{Point2.Y})");
 
 }
