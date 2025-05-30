@@ -428,6 +428,7 @@ Countdown(10);
 
 // Exercice 18 - Taking a Number
 
+/*
 using System.Security;
 
 int AskForNumber(string text)
@@ -450,6 +451,7 @@ int AskForNumberInRange(string text, int min, int max)
     } while (number < min || number > max);
     return number;
 }
+*/
 
 // Exercice 19 - Countdown
 
@@ -1156,7 +1158,7 @@ enum Fletching { plastic, turkeyFeather, gooseFeather }
 // PART 2 - Exercice 6 - Arrow Factories
 
 Arrow wonderfullArrow = ArrowMaker();
-Console.WriteLine($"You created an arrow with a {wonderfullArrow.head} head, {wonderfullArrow.fletching} fletching and a length of {wonderfullArrow.length} cm.");
+Console.WriteLine($"You created an arrow with a {wonderfullArrow.Head} head, {wonderfullArrow.Fletching} fletching and a length of {wonderfullArrow.Length} cm.");
 Console.WriteLine($"The cost of this arrow is {wonderfullArrow.GetCost()} gold.");
 
 
@@ -1164,7 +1166,7 @@ Arrow ArrowMaker()
 {
     Console.WriteLine("Welcome to Vin Fletcher's Arrow Creator 3000!");
     Console.WriteLine("What type of arrow do you want to create? (elite, beginner, marksman, custom)");
-    string arrowType = Console.ReadLine().ToLower();
+    string arrowType = Console.ReadLine()?.ToLower() ?? "";
     switch (arrowType)
     {
         case "elite":
@@ -1237,27 +1239,27 @@ int GetArrowLength()
 
 class Arrow
 {
-    public ArrowHead head { get; init; } = ArrowHead.wood;
-    public Fletching fletching { get; init; } = Fletching.plastic;
-    public int length { get; init; } = 60;
+    public ArrowHead Head { get; init; } = ArrowHead.wood;
+    public Fletching Fletching { get; init; } = Fletching.plastic;
+    public int Length { get; init; } = 60;
 
     public Arrow(ArrowHead head, Fletching fletching, int length)
     {
-        this.head = head;
-        this.fletching = fletching;
-        this.length = length;
+        this.Head = head;
+        this.Fletching = fletching;
+        this.Length = length;
     }
 
     public Arrow() { } // Default constructor
 
-    public static Arrow CreateEliteArrow() => new Arrow(ArrowHead.steel, Fletching.plastic, 95);
-    public static Arrow CreateBeginnerArrow() => new Arrow(ArrowHead.wood, Fletching.gooseFeather, 75);
-    public static Arrow CreateMarksmanArrow() => new Arrow(ArrowHead.steel, Fletching.gooseFeather, 65);
+    public static Arrow CreateEliteArrow() => new (ArrowHead.steel, Fletching.plastic, 95);
+    public static Arrow CreateBeginnerArrow() => new (ArrowHead.wood, Fletching.gooseFeather, 75);
+    public static Arrow CreateMarksmanArrow() => new (ArrowHead.steel, Fletching.gooseFeather, 65);
 
     public float GetCost()
     {
         float cost = 0;
-        switch (head)
+        switch (Head)
         {
             case ArrowHead.steel:
                 cost += 10;
@@ -1272,7 +1274,7 @@ class Arrow
                 cost = 0;
                 break;
         }
-        switch (fletching)
+        switch (Fletching)
         {
             case Fletching.plastic:
                 cost += 10;
@@ -1287,7 +1289,7 @@ class Arrow
                 cost = 0;
                 break;
         }
-        cost += length * 0.05f;
+        cost += Length * 0.05f;
         return cost;
     }
 }
