@@ -1157,6 +1157,7 @@ enum Fletching { plastic, turkeyFeather, gooseFeather }
 
 // PART 2 - Exercice 6 - Arrow Factories
 
+/*
 Arrow wonderfullArrow = ArrowMaker();
 Console.WriteLine($"You created an arrow with a {wonderfullArrow.Head} head, {wonderfullArrow.Fletching} fletching and a length of {wonderfullArrow.Length} cm.");
 Console.WriteLine($"The cost of this arrow is {wonderfullArrow.GetCost()} gold.");
@@ -1296,3 +1297,4 @@ class Arrow
 
 enum ArrowHead { steel, wood, obsidian }
 enum Fletching { plastic, turkeyFeather, gooseFeather }
+*/
