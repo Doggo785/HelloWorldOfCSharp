@@ -9,6 +9,7 @@ void main()
         Console.WriteLine("Welcome my training repo on C#!\n");
         Console.WriteLine("1) Point class");
         Console.WriteLine("2) Color class");
+        Console.WriteLine("3) Card class");
         Console.Write("\nWhich exercise do you want  : ");
         string exercise = Console.ReadLine() ?? "";
         switch (exercise)
@@ -22,6 +23,12 @@ void main()
             case "2":
                 Console.Clear();
                 ColorExercice();
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+            case "3":
+                Console.Clear();
+                CardExercice();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 break;
@@ -64,4 +71,14 @@ void ColorExercice() {
     Console.WriteLine($"Orange: ({Orange._red}, {Orange._green}, {Orange._blue})");
     Console.WriteLine($"Purple: ({Purple._red}, {Purple._green}, {Purple._blue})");
     Console.WriteLine($"Here is a custom color : ({WeirdColor._red}, {WeirdColor._green}, {WeirdColor._blue})");
+}
+
+void CardExercice() {
+    Card card = new(Colors.Red, Rank.Ten);
+    Console.WriteLine($"Card Color: {card.Color}, Rank: {card.Rank}");
+    Console.WriteLine($"Is the card a number? {card.IsNumber()}");
+    Console.WriteLine($"Is the card a symbol? {card.IsSymbol}");
+    
+    Console.WriteLine("\nAll cards in the deck:");
+    card.SetOfCards();
 }
