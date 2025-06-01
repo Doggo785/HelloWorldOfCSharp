@@ -10,6 +10,7 @@ void main()
         Console.WriteLine("1) Point class");
         Console.WriteLine("2) Color class");
         Console.WriteLine("3) Card class");
+        Console.WriteLine("4) The Locked Door");
         Console.Write("\nWhich exercise do you want  : ");
         string exercise = Console.ReadLine() ?? "";
         switch (exercise)
@@ -31,6 +32,67 @@ void main()
                 CardExercice();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
+                break;
+            case "4":
+                bool running = true;
+                Console.Clear();
+                Console.WriteLine("Welcome to the Locked Door exercise!");
+                Console.WriteLine("You can open, close, lock, unlock, or change the passcode of the door.\n");
+                Console.WriteLine("Please enter the initial passcode for the door (an integer): ");
+                Door door = new(int.Parse(Console.ReadLine() ?? "0000"));
+                Console.WriteLine("Door created with initial passcode.\n");
+                Thread.Sleep(2000);
+                Console.Clear();    
+                while (running)
+                {
+                    Console.WriteLine($"Current door state: {door.State}");
+                    Console.WriteLine("Choose an action: Open, Close, Lock, Unlock, ChangePasscode, Exit");
+                    string action = Console.ReadLine()?.ToLower() ?? "";
+                    if (action == "exit") break;
+                    switch (action)
+                    {
+                        case "open":
+                            door.Open();
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        case "close":
+                            door.Close();
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        case "lock":
+                            Console.Write("Enter passcode to lock: ");
+                            int lockPasscode = int.Parse(Console.ReadLine() ?? "0");
+                            door.Lock(lockPasscode);
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        case "unlock":
+                            Console.Write("Enter passcode to unlock: ");
+                            int unlockPasscode = int.Parse(Console.ReadLine() ?? "0");
+                            door.Unlock(unlockPasscode);
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        case "changepasscode":
+                            Console.Write("Enter old passcode: ");
+                            int oldPasscode = int.Parse(Console.ReadLine() ?? "0");
+                            Console.Write("Enter new passcode: ");
+                            int newPasscode = int.Parse(Console.ReadLine() ?? "0");
+                            door.ChangePasscode(oldPasscode, newPasscode);
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        case "exit":
+                            running = false;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid action. Try again.");
+                            Thread.Sleep(1500);
+                            break;
+                    }
+                }
                 break;
             default:
                 Console.WriteLine("Invalid choice, exiting.");
