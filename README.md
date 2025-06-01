@@ -9,8 +9,7 @@ L'objectif de ce projet est de me permettre de progresser et de monter en expér
 ## Structure
 
 - Les solutions des exercices des 200 premières pages sont regroupées dans le fichier `Exercices.cs`.
-- Les exercices plus poussés, situés après la page 200, se trouvent dans le fichier `Program.cs`.
-- Chaque exercice est clairement identifié et commenté pour faciliter la lecture et la compréhension.
+- Les exercices plus poussés, situés après la page 200, se trouvent dans le fichier `Program.cs` et leurs classes sont déffinis dans les fichiers nommé en fonction de l'exercice.
 
 ## Prérequis
 
