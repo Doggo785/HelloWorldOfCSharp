@@ -12,6 +12,7 @@ void main()
         Console.WriteLine("3) Card class");
         Console.WriteLine("4) The Locked Door");
         Console.WriteLine("5) Password Validator");
+        Console.WriteLine("6) Rock Paper Scissors Game");
         Console.Write("\nWhich exercise do you want  : ");
         string exercise = Console.ReadLine() ?? "";
         switch (exercise)
@@ -43,6 +44,12 @@ void main()
             case "5":
                 Console.Clear();
                 PasswordValidatorExercice();
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+            case "6":
+                Console.Clear();
+                RockPaperCisors();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 break;
@@ -171,4 +178,15 @@ void PasswordValidatorExercice() {
     {
         Console.WriteLine("The password is invalid.");
     }
+}
+
+void RockPaperCisors()
+{
+    Console.WriteLine("Welcome to the Rock, Paper, Scissors game!");
+    Console.Write("Enter Player 1's name: ");
+    string player1Name = Console.ReadLine() ?? "Player 1";
+    Console.Write("Enter Player 2's name: ");
+    string player2Name = Console.ReadLine() ?? "Player 2";
+    RockPaperScissorsGame game = new(player1Name, player2Name);
+    game.StartGame();
 }
