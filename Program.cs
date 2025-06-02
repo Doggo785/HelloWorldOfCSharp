@@ -11,6 +11,7 @@ void main()
         Console.WriteLine("2) Color class");
         Console.WriteLine("3) Card class");
         Console.WriteLine("4) The Locked Door");
+        Console.WriteLine("5) Password Validator");
         Console.Write("\nWhich exercise do you want  : ");
         string exercise = Console.ReadLine() ?? "";
         switch (exercise)
@@ -36,6 +37,12 @@ void main()
             case "4":
                 Console.Clear();
                 LockedDoorExercice();
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+            case "5":
+                Console.Clear();
+                PasswordValidatorExercice();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 break;
@@ -148,5 +155,21 @@ void LockedDoorExercice() {
                 Thread.Sleep(1500);
                 break;
         }
+    }
+}
+
+void PasswordValidatorExercice() {
+    PasswordValidator validator = new();
+    Console.WriteLine("Welcome to the Password Validator exercise!");
+    Console.WriteLine("Please enter a password to validate: ");
+    string password = Console.ReadLine() ?? "";
+    bool isValid = validator.IsValid(password);
+    if (isValid)
+    {
+        Console.WriteLine("The password is valid.");
+    }
+    else
+    {
+        Console.WriteLine("The password is invalid.");
     }
 }
