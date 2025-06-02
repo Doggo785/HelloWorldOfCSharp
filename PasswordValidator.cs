@@ -1,6 +1,6 @@
 class PasswordValidator
 {
-	public bool IsValid(string password)
+	public static bool IsValid(string password)
 	{
 		if (string.IsNullOrEmpty(password))
 		{
@@ -16,7 +16,7 @@ class PasswordValidator
 		}
 		return true;
 	}
-	private bool ContainsUpperCase(string password)
+	private static bool ContainsUpperCase(string password)
 	{
 		foreach (char c in password)
 		{
@@ -27,7 +27,7 @@ class PasswordValidator
 		}
 		return false;
 	}
-	private bool ContainsLowerCase(string password)
+	private static bool ContainsLowerCase(string password)
 	{
 		foreach (char c in password)
 		{
@@ -38,7 +38,7 @@ class PasswordValidator
 		}
 		return false;
 	}
-	private bool ContainsDigit(string password)
+	private static bool ContainsDigit(string password)
 	{
 		foreach (char c in password)
 		{
@@ -50,7 +50,7 @@ class PasswordValidator
 		return false;
 	}
 
-	private bool ContainsUpperTOrAmpersand(string password)
+	private static bool ContainsUpperTOrAmpersand(string password)
 	{
 		foreach (char c in password)
 		{

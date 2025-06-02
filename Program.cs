@@ -159,11 +159,10 @@ void LockedDoorExercice() {
 }
 
 void PasswordValidatorExercice() {
-    PasswordValidator validator = new();
     Console.WriteLine("Welcome to the Password Validator exercise!");
     Console.WriteLine("Please enter a password to validate: ");
     string password = Console.ReadLine() ?? "";
-    bool isValid = validator.IsValid(password);
+    bool isValid = PasswordValidator.IsValid(password);
     if (isValid)
     {
         Console.WriteLine("The password is valid.");
