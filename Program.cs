@@ -13,6 +13,7 @@ void main()
         Console.WriteLine("4) The Locked Door");
         Console.WriteLine("5) Password Validator");
         Console.WriteLine("6) Rock Paper Scissors Game");
+        Console.WriteLine("7) Packing Inventory");
         Console.Write("\nWhich exercise do you want  : ");
         string exercise = Console.ReadLine() ?? "";
         switch (exercise)
@@ -50,6 +51,12 @@ void main()
             case "6":
                 Console.Clear();
                 RockPaperCisors();
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                break;
+            case "7":
+                Console.Clear();
+                PackingInventoryExercice();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
                 break;
@@ -189,4 +196,15 @@ void RockPaperCisors()
     string player2Name = Console.ReadLine() ?? "Player 2";
     RockPaperScissorsGame game = new(player1Name, player2Name);
     game.StartGame();
+}
+
+void PackingInventoryExercice() {
+    Pack pack = new(10f, 20f);
+    pack.AddItem(new Arrow());
+    pack.AddItem(new Bow());
+    pack.AddItem(new Rope());
+    pack.AddItem(new Water());
+    Console.WriteLine($"Total items in the pack: {pack.Count()}");
+    Console.WriteLine($"Max weight: {pack.maxWeight}, Max volume: {pack.maxVolume}");
+    Console.WriteLine($"Current weight: {pack.GetTotalWeight()} / {pack.maxWeight}, Current volume: {pack.GetTotalVolume()} / {pack.maxVolume}");
 }
